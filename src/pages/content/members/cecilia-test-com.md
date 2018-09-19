@@ -1,7 +1,7 @@
 ---
 photo: /assets/content/member6.jpg
 name: Cecília Gouveia
-role: Secretária Forense
+role: Secretária Forens
 description: >-
   Nasci em 1963 e sou filha de Lisboa. Concluí o ensino obrigatório na Escola
   Secundária Ferreira Borges. Viria a ser mãe de 1ª viagem, nessa altura, aos 18
@@ -30,3 +30,4 @@ lawyerEmail: ''
 size: small
 position: '0'
 ---
+
