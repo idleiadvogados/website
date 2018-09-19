@@ -1,0 +1,187 @@
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.name {
+  font-family: 'Merriweather', serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+  text-align: center;
+  color: #bd2e2b;
+}
+
+.role {
+  font-family: 'Sintony', sans-serif;
+  text-align: center;
+  font-size: 1.25rem;
+  opacity: 0.7;
+  line-height: 1.56;
+  letter-spacing: 0.1px;
+  line-height: 1.4;
+  color: #142139;
+}
+
+.photo {
+  position: relative;
+  z-index: 1;
+  max-width: 16.5rem;
+  text-align: center;
+  box-shadow: 5px 10px 15px 0 rgba(20, 33, 57, 0.15);
+  object-fit: cover;
+  border-radius: 2px;
+  @media (max-width: 899px) {
+    margin-right: 48px;
+    width: 100vw;
+    max-width: 100%;
+  }
+}
+
+.photo:first-child {
+  @media (max-width: 899px) {
+    margin-left: 15%;
+  }
+}
+
+.overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  mix-blend-mode: multiply;
+  background-image: linear-gradient(to bottom, rgba(20, 33, 57, 0.45), #142139),
+    linear-gradient(#ffffff, #ffffff);
+  background-image: -ms-linear-gradient(
+      to bottom,
+      rgba(20, 33, 57, 0.45),
+      #142139
+    ),
+    -ms-linear-gradient(transparent, transparent);
+  background-image: -moz-linear-gradient(
+      to bottom,
+      rgba(20, 33, 57, 0.45),
+      #142139
+    ),
+    -moz-linear-gradient(#ffffff, #ffffff);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoWrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  &:hover {
+    .overlay {
+      opacity: 0.9;
+    }
+    .plus {
+      .plusIcon {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+@supports not (mix-blend-mode: multiply) {
+  .photoWrapper {
+    &:hover {
+      .overlay {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+.plus {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .plusIconWrapper {
+    position: relative;
+    .plusIcon {
+      width: 48.8px !important;
+      height: 48.8px !important;
+      color: white;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      filter: alpha(opacity=10);
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: white;
+        transition: transform 0.25s ease-out;
+      }
+
+      /* Vertical line */
+      &:before {
+        top: 0;
+        left: 50%;
+        width: 3px;
+        height: 100%;
+        margin-left: -2px;
+      }
+
+      /* horizontal line */
+      &:after {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        margin-top: -2px;
+      }
+    }
+  }
+}
+
+.small {
+  max-width: 296px;
+  height: 326px;
+  @media (min-width: 900px) and (max-width: 1199px) {
+    max-width: 150px;
+    height: 200px;
+  }
+}
+
+.medium {
+  max-width: 400px;
+  height: 440px;
+  @media (min-width: 900px) and (max-width: 1199px) {
+    max-width: 200px;
+    height: 240px;
+  }
+}
+
+.large {
+  max-width: 504px;
+  height: 554px;
+  @media (min-width: 900px) and (max-width: 1199px) {
+    max-width: 300px;
+    height: 350px;
+  }
+}

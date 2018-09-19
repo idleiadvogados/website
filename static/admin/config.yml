@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: joaodias/idle-site
+media_folder: src/assets/content
+public_folder: assets/content
+collections:
+  - name: members
+    label: Team member
+    folder: src/pages/content/members
+    create: true
+    fields:
+      - name: photo
+        label: Foto
+        widget: image
+      - name: name
+        label: Nome
+      - name: role
+        label: Cargo
+      - name: description
+        label: Descrição
+        widget: text
+      - name: title
+        label: Email
+      - name: lawyerEmail
+        label: Email ordem dos advogados
+        required: false
+      - name: size
+        label: Tamanho da foto
+        widget: select
+        options:
+          - small
+          - medium
+          - large
+      - name: position
+        label: Posição na grelha (min. 0)
+        widget: number
+        min: 0
+  - name: static-content
+    label: Conteudo estático
+    files:
+      - name: about
+        label: A sociedade
+        file: src/pages/content/about.md
+        fields:
+          - name: citation
+            label: Citação
+            widget: text
+          - name: author
+            label: Autor/Publicação/Ano
+            widget: text
+          - name: description
+            label: Texto
+            widget: text
+      - name: careers
+        label: Equipa
+        file: src/pages/content/careers.md
+        fields:
+          - name: photo
+            label: Foto de equipa
+            widget: image
+      - name: contacts
+        label: Contactos
+        file: src/pages/content/contacts.md
+        fields:
+          - name: phone
+            label: Telefone
+            widget: text
+          - name: fax
+            label: Fax
+            widget: text
+          - name: address
+            label: Morada
+            widget: text
+          - name: link
+            label: Maps link
+            widget: text
+          - name: photo
+            label: Foto
+            widget: image

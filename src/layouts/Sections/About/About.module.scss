@@ -1,0 +1,66 @@
+.about {
+  position: relative;
+  z-index: 2;
+}
+
+.aboutWrapper {
+  padding-left: 3.5%;
+  width: 100%;
+  @media (max-width: 899px) {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+.title {
+  font-family: 'Sintony', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  padding-bottom: 1.6875rem;
+  text-transform: uppercase;
+}
+
+.text {
+  font-family: 'Sintony', sans-serif;
+  opacity: 0.7;
+  font-size: 1.125rem;
+  line-height: 1.56;
+  letter-spacing: 0.1px;
+  color: #142139;
+  white-space: pre-wrap;
+}
+
+.backgroundSquare {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 42.22222222222222%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #bd2e2b, #d0021b);
+  border-radius: 2px;
+  @media (max-width: 899px) {
+    width: 63.03191489361702%;
+  }
+}
+
+.backgroundSquare::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0.8;
+  background-repeat: repeat-y;
+  background-image: url('../../../assets/texture-left.png');
+}
+
+.cardContent {
+  @media (max-width: 1199px) {
+    padding-bottom: 5rem !important;
+  }
+}

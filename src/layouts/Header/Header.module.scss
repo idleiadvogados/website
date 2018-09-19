@@ -1,0 +1,141 @@
+@value white from '../common.module.scss';
+
+.header {
+  background: white;
+  height: 5rem;
+  box-shadow: 0 2px 8px 0 rgba(20, 33, 57, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  @media (max-width: 899px) {
+    width: 80%;
+  }
+  @media (max-width: 1199px) {
+    svg {
+      width: 80%;
+    }
+  }
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 9%;
+  padding-right: 9%;
+  @media (max-width: 899px) {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  text-transform: uppercase;
+  padding: 1rem;
+  cursor: pointer;
+  font-family: 'Sintony', sans-serif;
+  letter-spacing: 0.1px;
+  @media (max-width: 899px) {
+    text-transform: none;
+  }
+}
+
+.menuList {
+  @media (max-width: 899px) {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 17.5rem;
+    font-size: 2.625rem;
+    top: 7.571428571428571rem;
+    left: 1.7142857142857142rem;
+  }
+}
+
+.menuList li {
+  @media (max-width: 899px) {
+    padding: 0;
+  }
+}
+
+.mobileLogo {
+  @media (max-width: 899px) {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.7142857142857142rem;
+  }
+}
+
+.activeListItem {
+  opacity: 1 !important;
+}
+
+li:last-child {
+  padding-right: 0;
+}
+
+.anchor {
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  color: #142139;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #fbfbfc;
+}
+
+.mobileMenu::before {
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.3;
+  transform: rotate(-180deg);
+  background-image: url('../../assets/texture.png');
+  background-repeat: repeat-x;
+}
+
+.burger {
+  margin-right: 3%;
+}
+
+.close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  margin-right: 3%;
+  z-index: 99;
+}
