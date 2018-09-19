@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: joaodias/idle-site
+  repo: idleiadvogados/website
 media_folder: src/assets/content
 public_folder: assets/content
 collections:
